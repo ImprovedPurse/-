@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Net;
+using Newtonsoft.Json;
+using System.IO;
+ 
 
 namespace WindowsFormsApp1
 {
@@ -16,15 +20,20 @@ namespace WindowsFormsApp1
         public static string ConnectString = "Provider = Microsoft.Jet.OLEDB.4.0; data source=HistoryDb.mdb;";
 
         private OleDbConnection myConnection;
+       
         public Form2()
         {
             InitializeComponent();
            myConnection = new OleDbConnection(ConnectString);
             myConnection.Open();
+
+         
         }
 
         public class Conve : Form2
         {
+
+
             public string RUB_to_USD(String vhodnie_dannie)
             {
                 string query = "INSERT INTO History (Converted_from, Converted_to) VALUES ('RUB', 'USD')";
@@ -279,6 +288,27 @@ namespace WindowsFormsApp1
             Form3 form3 = new Form3();
             this.Hide();
             form3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          
+               string s;
+               WebRequest request = WebRequest.Create("https://www.nbrb.by/api/exrates/rates/145");
+               WebResponse response = request.GetResponse();
+
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    s = reader.ReadLine();
+                    s = s.Substring(125,4);
+
+                    MessageBox.Show(s);
+                }
+            }
+            response.Close();
+          
         }
     }
 }

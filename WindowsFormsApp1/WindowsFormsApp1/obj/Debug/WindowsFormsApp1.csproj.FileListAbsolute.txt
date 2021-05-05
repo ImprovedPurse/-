@@ -13,3 +13,6 @@ C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFo
 C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
 C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form4.resources
 C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form5.resources
+C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\Задание\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
